@@ -1,6 +1,9 @@
 # Authentication in NestJS
 
 ## Description
+Example implementation of Authentication in NestJS.
+
+For an in-depth tutorial on making this, please check this [blog post](https://jereme.me/post/nestjs-authentication-guide/).
 
 ## Project setup
 
