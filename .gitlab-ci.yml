@@ -1,0 +1,24 @@
+
+image: node:22-slim
+
+
+# This folder is cached between builds
+# https://docs.gitlab.com/ee/ci/yaml/#cache
+cache:
+  paths:
+    - node_modules/
+
+unit_tests:
+  script:
+    - npm install
+    - npm run test
+
+# test_db:
+#   script:
+#     - npm install
+#     - node ./specs/start.js ./specs/db-postgres.spec.js
+
+# deploy:
+#   stage: deploy
+#   script: echo "Define your deployment script!"
+#   environment: production
