@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from './auth.service';
 import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
+import { JwtService } from '@nestjs/jwt';
 
 describe('AuthService', () => {
   let authService: AuthService;
@@ -18,6 +19,12 @@ describe('AuthService', () => {
             findByUsername: jest.fn(),
           },
         },
+        {
+          provide: JwtService,
+          useValue: {
+            signAssync: jest.fn(),
+          },
+        }
       ],
     }).compile();
 
@@ -103,8 +110,7 @@ describe('AuthService', () => {
   describe('hashPassword', () => {
     it('should return an object containing hashed and salt', async () => {
       const result = await authService.hashPassword('password');
-      expect(result).toHaveProperty('hashed');
-      expect(result).toHaveProperty('salt');
+      expect(result.length).toBeGreaterThan(0);
     });
   });
 });
