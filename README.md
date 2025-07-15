@@ -1,5 +1,7 @@
 # Authentication in NestJS
 
+[![NestJS Auth CI](https://github.com/jeremejazz/nestjs-auth-example/actions/workflows/node.js.yml/badge.svg)](https://github.com/jeremejazz/nestjs-auth-example/actions/workflows/node.js.yml)
+
 ## Description
 Example implementation of Authentication in NestJS.
 
