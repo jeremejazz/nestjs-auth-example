@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: node:22-slim
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
